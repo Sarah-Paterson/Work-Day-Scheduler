@@ -8,11 +8,7 @@ let hourTime = dayjs().format("H");
 
 let today = dayjs();
 
-// handle displaying the date
-// function displayDate() {
-//     var rightNow = today.format('MMM D, YYYY');
-//     currentDay.text(rightNow);
-// }
+// let hour9element = $('#hour-9');
 
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
@@ -21,6 +17,8 @@ $(function () {
     // function? How can DOM traversal be used to get the "hour-x" id of the
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
+
+
     
 
     // Save button
@@ -50,9 +48,48 @@ $(function () {
 
     //   });
 
-    $(".saveBtn").click(function(){
-        console.log("save clicked");
+    // // hour 9 set to storage
+    // localStorage.setItem(key,value);
+    // localStorage.getItem(key);
 
+    $("#saveBtn9").click(function(){
+        // hour 9 get value
+        let value = $(".description").val();
+        $("#text-area-9").val(value);
+        // hour 9 set to storage
+        $(function () {
+            localStorage.setItem("#hour-9",value);
+        });
+        // hour 9 get from storage
+        // $(function () {
+        //     let storedValue = localStorage.getItem("#hour-9");
+        //     $("#text-area-9").val(storedValue);
+        // });
+
+    })
+    let storedValue = localStorage.getItem("#hour-9");
+    $("#text-area-9").val(storedValue);
+
+    console.log(storedValue);
+    console.log($("#text-area-9"));
+    
+
+    // $(".saveBtn").click(function(){
+    //     console.log("save clicked");
+
+        // $("#hour-9").submit(function() {
+        //     value9 = $("#hour-9").val();
+        //     $('#p').text(value);
+        // });
+        
+        // // hour 9 get value
+        // let value9 = $(".hour-9-text").val();
+        // $('.hour-9-text').text(value9);
+        // // hour 9 set to storage
+        // localStorage.setItem("#hour-9",value9);
+        // // hour 9 get from storage
+        // // localStorage.getItem("#hour-9");
+        
 
 
         // let inputText = $('.description');
@@ -77,7 +114,9 @@ $(function () {
          
         // }
 
-    });
+
+
+    // });
 
     // Reads projects from local storage and returns array of project objects.
     // Returns an empty array ([]) if there aren't any projects.
@@ -255,4 +294,9 @@ $(function () {
     }
 
     displayDate();
-  });
+});
+
+// $(window).load(function() {
+//     let storedValue = localStorage.getItem("#hour-9");
+//     $("#text-area-9").text(storedValue);
+// });
