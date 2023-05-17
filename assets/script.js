@@ -4,8 +4,6 @@ let today = dayjs();
 
 $(function () {
 
-    // for loop with div class????????
-
     // Save buttons
     $("#saveBtn9").click(function(){
         // hour 9 get value
